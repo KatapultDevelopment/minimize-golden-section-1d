@@ -11,7 +11,7 @@ Returns the argument that minimizes a function of a single variable using [golde
 ## Installation
 
 ```bash
-$ npm install minimize-golden-section-1d
+$ npm install minimize-golden-section-1d#feat/es-module-conversion
 ```
 
 ## Example
@@ -19,7 +19,7 @@ $ npm install minimize-golden-section-1d
 Returns the argument that minimizes the function:
 
 ```javascript
-var minimize = require('minimize-golden-section-1d');
+import { minimize } from 'minimize-golden-section-1d';
 
 minimize(Math.cos)
 // => 3.1415926622945616
@@ -33,7 +33,6 @@ minimize(Math.cos, {guess: -3});
 
 ## Usage
 
-#### `require('minimize-golden-section-1d')(f[, options[, status]])`
 
 Given function `f` of one `Number`-valued variable, computes a local minimum. On successful completion, returns the value of the argument that minimizes `f` (note that this may either be a local or global minimum in the provided range). If the algorithm fails (i.e. if max iterations exceeded, `NaN` encountered, or unbounded divergence of the argument to `Infinity`), returns `NaN`.
 
