@@ -1,6 +1,7 @@
 'use strict';
 
-var minimize = require('../');
+// var minimize = require('../');
+import { minimize } from '../index.mjs';
 
 console.log('min(cos) at x =', minimize(Math.cos));
 

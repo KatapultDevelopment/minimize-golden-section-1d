@@ -2,9 +2,7 @@
 
 var PHI_RATIO = 2 / (1 + Math.sqrt(5));
 
-module.exports = goldenSectionMinimize;
-
-function goldenSectionMinimize (f, xL, xU, tol, maxIterations, status) {
+function goldenSectionMinimize(f, xL, xU, tol, maxIterations, status) {
   var xF, fF;
   var iteration = 0;
   var x1 = xU - PHI_RATIO * (xU - xL);
@@ -62,4 +60,8 @@ function goldenSectionMinimize (f, xL, xU, tol, maxIterations, status) {
   } else {
     return xF;
   }
+}
+
+export {
+  goldenSectionMinimize,
 }

@@ -1,11 +1,10 @@
 'use strict';
-
-var goldenSectionMinimize = require('./src/golden-section-minimize');
-var bracketMinimum = require('./src/bracket-minimum');
+import { goldenSectionMinimize } from './src/golden-section-minimize.js';
+import { bracketMinimum } from './src/bracket-minimum.js';
 
 var bounds = [0, 0];
 
-module.exports = function minimize (f, options, status) {
+function minimize(f, options, status) {
   options = options || {};
   var x0;
   var tolerance = options.tolerance === undefined ? 1e-8 : options.tolerance;
@@ -44,4 +43,8 @@ module.exports = function minimize (f, options, status) {
   }
 
   return goldenSectionMinimize(f, bounds[0], bounds[1], tolerance, maxIterations, status);
+};
+
+export {
+  minimize
 };
